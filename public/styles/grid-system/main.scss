@@ -1,0 +1,42 @@
+@use './variable' as *;
+@use "./placeholder" as *;
+@use "./mixin" as *;
+
+@use "sass:math";
+
+@use "tailwindcss/components" as *;
+
+
+@layer components {
+
+    .grid-container {
+        position: relative;
+        --grid-gutter-x: #{$grid-gutter-width};
+        --grid-gutter-y: 0;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(var(--grid-gutter-y) * -1);
+        margin-left: calc(var(--grid-gutter-x) * 0.5 * -1);
+        margin-right: calc(var(--grid-gutter-x) * 0.5 * -1);
+    }
+
+    .col {
+        @extend %cols;
+    }
+
+    .row-cols {
+        @extend %cols;
+    }
+
+    @include make-columns();
+    @include make-row-columns();
+    @include make-offsets();
+    @include make-gutters();
+
+    .item {
+        background-color: orange;
+    }
+}

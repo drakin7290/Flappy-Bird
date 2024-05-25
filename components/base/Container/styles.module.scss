@@ -1,0 +1,23 @@
+@import '~/public/styles/base.scss';
+
+@mixin container($reduce-width: 0px) {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@mixin destroyContainer() {
+  max-width: none !important;
+  min-width: 0 !important;
+  padding: 15px !important;
+}
+
+.container {
+  @include container();
+}
+
+.center-child {
+  display: flex;
+  justify-content: center;
+}

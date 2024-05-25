@@ -1,0 +1,7 @@
+{
+  "PRODUCTION_VERSION": "Ver Local",
+  "SERVER_URI": "http://localhost:8000/api/v1",
+  "WEB_URI": "http://abc.com",
+  "SECRET": "e082f8kTSOaW8vY/iP6bhud3F6jmIcVl4DBcJcOgEjM=",
+  "NEXTAUTH_URL": "http://localhost:3000/api/auth"
+}

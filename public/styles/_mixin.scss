@@ -1,0 +1,95 @@
+@mixin userSelect($choose) {
+  user-select: $choose;
+  -ms-user-select: $choose;
+  -moz-user-select: $choose;
+  -webkit-user-select: $choose;
+}
+
+@mixin Image() {
+  overflow: hidden;
+
+  span {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    -o-object-position: center;
+  }
+}
+
+@mixin clampText($number: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//pc
+@mixin Responsive($canvas: 'medium') {
+  @if $canvas == 'large' {
+    @media only screen and (min-width: $large-device) {
+      @content;
+    }
+  } @else if $canvas == 'medium' {
+    @media only screen and (min-width: $medium-device) and (max-width: $large-device) {
+      @content;
+    }
+  } @else if ($canvas == 'small') {
+    @media only screen and (min-width: $small-device) and (max-width: $medium-device) {
+      @content;
+    }
+  } @else if ($canvas == 'extra-small') {
+    @media only screen and (max-width: $small-device) {
+      @content;
+    }
+  }
+}
+@mixin ResponsiveCustom($maxWidth: $large-width, $minWidth: 0) {
+  @media only screen and (max-width: $maxWidth) and (min-width: $minWidth) {
+    @content;
+  }
+}
+@mixin text-style() {
+  color: $color-white;
+  font-size: 1.4rem;
+  line-height: 2.275rem;
+  text-decoration: none;
+  @include Responsive('pc') {
+    line-height: 1.625;
+    font-size: 1.6rem;
+  }
+}
+
+@mixin transition-all($time: 0.4s) {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: $time;
+}
+
+@mixin hide-scrollbar() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin style-vertical-scroll() {
+  &::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 24px;
+    right: 15px;
+    position: relative;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 24px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #acacac;
+    border-radius: 24px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+}

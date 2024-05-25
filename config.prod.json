@@ -1,0 +1,7 @@
+{
+  "PRODUCTION_VERSION": "ver 1.0.0",
+  "SERVER_URI": "https://abc.com/api/v1",
+  "WEB_URI": "https://abc.com",
+  "SECRET": "87R2ZFWbeqduKgFxpbFQWxWxWjZqqphh6/FP4Lnd0nY=",
+  "NEXTAUTH_URL": "http://localhost:3000/api/auth"
+}

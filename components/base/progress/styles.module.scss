@@ -1,0 +1,13 @@
+.bar {
+  background-color: #2299dd;
+  height: 2px;
+  width: 100%;
+  z-index: 50;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+
+.container {
+  pointer-events: none;
+}

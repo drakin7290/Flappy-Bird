@@ -1,0 +1,8 @@
+{
+    "name": "WebName",
+    "description": "des",
+    "short_name": "webname",
+    "start_url": "/",
+    "lang": "en-EN",
+    "prefer_related_applications": false
+}

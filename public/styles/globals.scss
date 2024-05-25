@@ -1,0 +1,98 @@
+@import './reset';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '../fonts/fonts.css';
+@import './base.scss';
+
+* {
+  outline: none;
+  margin: 0;
+  transition: background-color 0.4s;
+  padding: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+html {
+  font-size: 10px;
+  color: $color-black;
+  font-family: $font-main, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue,
+    Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  scroll-behavior: smooth;
+  behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4; //use: &#0009;
+}
+
+body {
+  position: relative;
+  background-color: black;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(35, 35, 35);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: $font-main, sans-serif;
+  overflow: hidden;
+
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: $small-device) {
+    overflow-x: hidden;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input {
+  background-clip: text;
+}
+
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+[role='icon-default'] {
+  color: #1e1e1e;
+  display: inline-block;
+}

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Darker Grotesque';
+    src: url(./DarkerGrotesque-Bold.ttf);
+    font-weight: 700;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Darker Grotesque';
+    src: url(./DarkerGrotesque-Extrabold.ttf);
+    font-weight: 800;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Darker Grotesque';
+    src: url(./DarkerGrotesque-Black.ttf);
+    font-weight: 900;
+    font-display: block;
+}

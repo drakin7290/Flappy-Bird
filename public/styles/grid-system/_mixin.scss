@@ -1,0 +1,44 @@
+@use './variable' as *;
+@use './placeholder' as *;
+@use "sass:math";
+
+@mixin make-columns() {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i} {
+            width: math.div(100%, $grid-columns) * $i;
+            @extend %cols;
+        }
+    }
+}
+
+@mixin make-row-columns() {
+    @for $i from 1 through $grid-columns * 0.5 {
+        .row-cols-#{$i}>.col {
+            width: math.div(100%, $i);
+            @extend %cols;
+        }
+    }
+}
+
+@mixin make-offsets() {
+    @for $i from 0 to $grid-columns {
+        .offset-#{$i} {
+            margin-left: if($i > 0, math.div(100%, $grid-columns) * $i, 0);
+        }
+    }
+}
+
+@mixin make-gutters () {
+    @each $i, $ratio in $gutters {
+
+        .g-#{$i},
+        .gx-#{$i} {
+            --grid-gutter-x: #{$grid-gutter-width * $ratio};
+        }
+
+        .g-#{$i},
+        .gy-#{$i} {
+            --grid-gutter-y: #{$grid-gutter-width * $ratio};
+        }
+    }
+}
