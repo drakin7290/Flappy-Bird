@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next';
 import useStoreGlobal from '~/store/useStoreGlobal';
 
 const PIPE_GAP = 240;
-const GRAVITY = 1200;
+const GRAVITY = 1600;
 const FLOOR_HEIGHT = 65;
 
 export default function HomePage() {
@@ -37,11 +37,11 @@ export default function HomePage() {
       // define gravity
       kb.setGravity(GRAVITY);
 
-      loadSprite('birdy', '/sprites/blue-bird.png', {
-        sliceX: 3,
+      loadSprite('birdy', '/sprites/panda.png', {
+        sliceX: 4,
         sliceY: 1,
         anims: {
-          fly: { from: 0, to: 2 },
+          fly: { from: 0, to: 3 },
           idle: { from: 0, to: 0 },
         },
       });
@@ -83,10 +83,21 @@ export default function HomePage() {
           body({ isStatic: true }),
           z(10),
         ]);
-        const player = add([sprite('birdy'), pos(40, 40), scale(2), area(), body(), rotate(0), anchor('center')]);
+        const player = add([
+          sprite('birdy'),
+          pos(60, 40),
+          scale(2),
+          area({
+            offset: new Vec2(20, 0),
+            scale: new Vec2(0.6, 1),
+          }),
+          body(),
+          rotate(0),
+          anchor('center'),
+        ]);
 
-        player.height = 24;
-        player.width = 34;
+        player.height = 65;
+        player.width = 68;
 
         player.play('fly', {
           loop: true,
@@ -130,7 +141,7 @@ export default function HomePage() {
           if (player.isJumping()) {
             player.angle = -30;
           } else {
-            if (player.angle < 90) {
+            if (player.angle < 60) {
               player.angle += 2;
             }
           }
@@ -172,7 +183,6 @@ export default function HomePage() {
           go('game');
         });
       });
-
       go('intro');
     }
   }, [kb]);
