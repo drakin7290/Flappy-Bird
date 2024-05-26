@@ -1,6 +1,5 @@
 import '~/public/styles/globals.scss';
 import queryClient from '~/core/queryClient';
-import { SessionProvider } from 'next-auth/react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react';
@@ -41,17 +40,15 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     };
   }, [router]);
   return (
-    <SessionProvider session={session}>
-      <QueryClientProvider client={queryClient}>
-        <Progress isAnimating={isAnimating} />
-        <GlobalProvider>
-          <ModalProvider>
-            <Component {...pageProps} />
-          </ModalProvider>
-        </GlobalProvider>
-        <ToastContainer />
-      </QueryClientProvider>
-    </SessionProvider>
+    <QueryClientProvider client={queryClient}>
+      <Progress isAnimating={isAnimating} />
+      <GlobalProvider>
+        <ModalProvider>
+          <Component {...pageProps} />
+        </ModalProvider>
+      </GlobalProvider>
+      <ToastContainer />
+    </QueryClientProvider>
   );
 }
 

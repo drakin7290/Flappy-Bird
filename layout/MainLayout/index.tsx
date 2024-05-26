@@ -1,8 +1,5 @@
 import Head from 'next/head';
 
-import Footer from '~/components/common/Footer';
-import Header from '~/components/common/Header';
-
 import { NAME_WEB } from '~/core/constant';
 
 export default function MainLayout({ children = null, title = '', currentPage = '', meta_data = null }) {

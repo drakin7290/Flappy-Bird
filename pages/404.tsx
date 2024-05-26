@@ -1,7 +1,5 @@
-import Container404 from '~/containers/Container404';
-
 export default function Custom404() {
-  return <Container404 />;
+  return <div className="bg-white flex items-center justify-center min-h-screen text-[3rem]">404 NOT FOUND</div>;
 }
 //FIXED: related
 
