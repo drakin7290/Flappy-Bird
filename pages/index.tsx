@@ -55,8 +55,11 @@ export default function HomePage() {
       // add character to screen, from a list of components
 
       scene('intro', () => {
-        add([text('press space to start', { size: 50 })]);
+        add([text('Press to start', { size: 50 })]);
         onKeyPress('space', () => {
+          go('game');
+        });
+        onMousePress(() => {
           go('game');
         });
       });
@@ -160,6 +163,11 @@ export default function HomePage() {
         add([text('gameover!\n' + 'score: ' + scoreGame + '\nhigh score: ' + highScore.current, { size: 45 })]);
 
         onKeyPress('space', () => {
+          score.current = 0;
+          go('game');
+        });
+
+        onMousePress(() => {
           score.current = 0;
           go('game');
         });
