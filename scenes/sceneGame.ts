@@ -4,7 +4,7 @@ import { ParamsCtx, SceneType, SetParamsCtx } from '~/core/types';
 
 const sceneGame = (kb: KaboomCtx, ctx: ParamsCtx, setCtx: SetParamsCtx) => {
   function producePipes(kb: KaboomCtx) {
-    const offset = rand(-150, 150);
+    const offset = rand(-200, 200);
     kb.add([
       sprite('pipe'),
       pos(width(), height() / 2 + offset + PIPE_GAP / 2),
