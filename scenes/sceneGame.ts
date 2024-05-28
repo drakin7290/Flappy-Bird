@@ -74,6 +74,10 @@ const sceneGame = (kb: KaboomCtx, ctx: ParamsCtx, setCtx: SetParamsCtx) => {
         playerPlay();
       });
 
+      onKeyPress('up', () => {
+        setCtx({ name: 'score', value: ctx.score + 25 });
+      });
+
       onMousePress(() => {
         playerPlay();
       });
