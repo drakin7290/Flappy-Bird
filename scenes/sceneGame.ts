@@ -4,7 +4,10 @@ import { ParamsCtx, SceneType, SetParamsCtx } from '~/core/types';
 
 const sceneGame = (kb: KaboomCtx, ctx: ParamsCtx, setCtx: SetParamsCtx) => {
   function producePipes(kb: KaboomCtx) {
-    const offset = rand(-150, 150);
+    let offset = rand(-150, 150);
+    if (ctx.score > 23) {
+      offset = rand(-500, 500);
+    }
     kb.add([
       sprite('pipe'),
       pos(width(), height() / 2 + offset + PIPE_GAP / 2),
@@ -72,10 +75,6 @@ const sceneGame = (kb: KaboomCtx, ctx: ParamsCtx, setCtx: SetParamsCtx) => {
 
       onKeyPress('space', () => {
         playerPlay();
-      });
-
-      onKeyPress('up', () => {
-        setCtx({ name: 'score', value: ctx.score + 25 });
       });
 
       onMousePress(() => {
