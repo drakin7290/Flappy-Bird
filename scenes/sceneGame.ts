@@ -5,7 +5,7 @@ import { ParamsCtx, SceneType, SetParamsCtx } from '~/core/types';
 const sceneGame = (kb: KaboomCtx, ctx: ParamsCtx, setCtx: SetParamsCtx) => {
   function producePipes(kb: KaboomCtx) {
     let offset = rand(-150, 150);
-    if (ctx.score > 23) {
+    if (ctx.score > 20) {
       offset = rand(-500, 500);
     }
     kb.add([
